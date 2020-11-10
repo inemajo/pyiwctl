@@ -182,7 +182,7 @@ class Iwctl(PyIwctlStatus):
 
         return obj.from_dbus(dbus_path, object_kwargs, self)
 
-    async def main_init(self):
+    async def connect_iwd(self):
         self.bus = await MessageBus(bus_type=BusType.SYSTEM).connect()
         await self.resync_objects()
         await self.install_agent()

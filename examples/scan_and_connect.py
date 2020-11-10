@@ -8,7 +8,7 @@ loop = asyncio.get_event_loop()
 
 
 async def be_connected(iwctl):
-    await iwctl.main_init()
+    await iwctl.connect_iwd()
     phy0 = list(iwctl.adapters.values())[0]
     wlan0 = list(phy0.devices.values())[0]
 
